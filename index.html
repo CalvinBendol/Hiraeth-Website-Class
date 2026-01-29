@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>X-08 HIRAETH | Official Class Site</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">HIRAETH <span>X-08</span></div>
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <div class="nav-links" id="navLinks">
+        <a onclick="showPage('home')" id="link-home" class="active-link">HOME</a>
+        <a onclick="showPage('gallery')" id="link-gallery">GALLERY</a>
+        <a onclick="showPage('students')" id="link-students">STUDENTS</a>
+        <a onclick="showPage('birthday')" id="link-birthday">BIRTHDAY</a>
+      </div>
+    </nav>
+
+    <div id="home" class="page active">
+      <div class="hero-container">
+        <span class="hero-badge">SMAN 2 LUMAJANG</span>
+        <h1 class="headline"><span id="greeting">Halo</span>, <br />Warga Hiraeth</h1>
+        <p class="sub-headline">Selamat datang di website resmi X-08. Tempat kita menyimpan kenangan, tawa, dan cerita masa SMA yang tak terlupakan.</p>
+        <div class="hero-img-box">
+          <img src="foto/foto kelas/IMG-20251018-WA0025 (copy).jpg" class="hero-img" alt="Class Photo" />
+        </div>
+        <div style="margin-top: 40px">
+          <button onclick="showPage('students')" style="padding: 12px 30px; background: var(--primary); color: #000; border: none; border-radius: 50px; font-weight: 700; cursor: pointer">
+            LIHAT ANGGOTA <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="teacher-section">
+        <div class="teacher-card">
+          <div class="teacher-img-box">
+            <img src="foto/individu/mam risma.jpeg" alt="Wali Kelas" />
+          </div>
+          <div class="teacher-info">
+            <span class="teacher-badge">Wali Kelas X-08</span>
+            <h2>Risma Kartika Sari, S.Pd.</h2>
+            <p>"Pesan singkat beliau untuk anak-anak X-08 agar tetap solid dan semangat belajar."</p>
+            <div class="teacher-social"><i class="fab fa-instagram"></i> @kartikasaririsma1</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="gallery" class="page">
+      <div class="gallery-header">
+        <h2>MEMORI <span>KITA</span></h2>
+        <p>Setiap foto punya cerita.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openZoom('foto/foto kelas/IMG-20251018-WA0025.jpg')">
+          <img src="foto/foto kelas/IMG-20251018-WA0025 (copy).jpg" alt="Memory" />
+          <div class="gallery-overlay">
+            <div class="gallery-title">Classmeeting</div>
+            <div class="gallery-date">12 Des 2025</div>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openZoom('foto/foto kelas/IMG-20251018-WA0037.jpg')">
+          <img src="foto/foto kelas/IMG-20251018-WA0037 (copy).jpg" alt="Memory" />
+          <div class="gallery-overlay">
+            <div class="gallery-title">Belajar Kelompok</div>
+            <div class="gallery-date">10 Jan 2026</div>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openZoom('foto/foto kelas/Cropped 1.png')">
+          <img src="foto/foto kelas/Croppedn 1.jpeg" alt="Memory" />
+          <div class="gallery-overlay">
+            <div class="gallery-title">HUT SMAN 2</div>
+            <div class="gallery-date">20 Feb 2026</div>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openZoom('foto/foto kelas/Cropped 2.png')">
+          <img src="foto/foto kelas/Croppedn 2.jpeg" alt="Memory" />
+          <div class="gallery-overlay">
+            <div class="gallery-title">HUT SMAN 2</div>
+            <div class="gallery-date">20 Feb 2026</div>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openZoom('foto/foto kelas/Cropped 3.png')">
+          <img src="foto/foto kelas/Croppedn 3.jpeg" alt="Memory" />
+          <div class="gallery-overlay">
+            <div class="gallery-title">HUT SMAN 2</div>
+            <div class="gallery-date">20 Feb 2026</div>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openZoom('foto/foto kelas/Cropped 4.png')">
+          <img src="foto/foto kelas/Croppedn 4.jpeg" alt="Memory" />
+          <div class="gallery-overlay">
+            <div class="gallery-title">HUT SMAN 2</div>
+            <div class="gallery-date">20 Feb 2026</div>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openZoom('foto/foto kelas/Cropped 5.png')">
+          <img src="foto/foto kelas/Croppedn 5.jpeg" alt="Memory" />
+          <div class="gallery-overlay">
+            <div class="gallery-title">HUT SMAN 2</div>
+            <div class="gallery-date">20 Feb 2026</div>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openZoom('foto/foto kelas/Cropped 6.png')">
+          <img src="foto/foto kelas/Croppedn 6.jpeg" alt="Memory" />
+          <div class="gallery-overlay">
+            <div class="gallery-title">HUT SMAN 2</div>
+            <div class="gallery-date">20 Feb 2026</div>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="openZoom('foto/foto kelas/Cropped 7.png')">
+          <img src="foto/foto kelas/Croppedn 7.jpeg" alt="Memory" />
+          <div class="gallery-overlay">
+            <div class="gallery-title">HUT SMAN 2</div>
+            <div class="gallery-date">20 Feb 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="students" class="page">
+      <div class="gallery-header">
+        <h2>DAFTAR <span>SISWA</span></h2>
+        <p>Keluarga besar X-08</p>
+      </div>
+      <div class="student-grid" id="studentList"></div>
+    </div>
+
+    <div id="bioModal" class="modal">
+      <div class="modal-box">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <div id="birthday" class="page">
+      <div class="gallery-header">
+        <h2>BIRTHDAY <span>CALENDAR</span></h2>
+        <p>Rayakan hari spesial keluarga X-08</p>
+      </div>
+      <div class="birthday-grid" id="birthdayGrid"></div>
+    </div>
+
+    <footer>
+      <p>Created by TIM IT Hiraeth &copy; 2026</p>
+    </footer>
+
+    <div id="galleryModal" class="gallery-zoom-overlay">
+      <span class="close-zoom" onclick="closeZoom()">&times;</span>
+      <div class="zoom-content-wrapper">
+        <img id="imgZoom" src="" alt="Zoomed Image" />
+        <div class="zoom-controls">
+          <a id="downloadBtn" href="" download class="btn-download"> <i class="fas fa-download"></i> Simpan Foto </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

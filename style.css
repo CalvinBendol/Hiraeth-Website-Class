@@ -1,0 +1,603 @@
+:root {
+  /* Palette Warna */
+  --bg-dark: #020617;
+  --bg-card: #0f172a;
+  --primary: #38bdf8;
+  --primary-dim: rgba(56, 189, 248, 0.1);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: #1e293b;
+  --font-main: "Outfit", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+  background-image: radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.1) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* --- NAVBAR --- */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.2rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(2, 6, 23, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--text-main);
+  letter-spacing: 1px;
+  z-index: 1001; /* Supaya logo tetap di atas menu mobile */
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+/* Container Menu Links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active-link {
+  color: var(--primary);
+}
+
+/* Tombol Hamburger (Default Hidden di Desktop) */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--text-main);
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* --- PAGE SYSTEM --- */
+.page {
+  display: none;
+  padding: 120px 5% 50px; /* Jarak atas disesuaikan */
+  min-height: 100vh;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- HERO SECTION --- */
+.hero-container {
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 50px;
+  background: var(--primary-dim);
+  color: var(--primary);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  font-size: 0.85rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.headline {
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sub-headline {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.hero-img-box {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 50px rgba(56, 189, 248, 0.1);
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s;
+}
+
+.hero-img-box:hover .hero-img {
+  transform: scale(1.05);
+}
+
+/* --- SECTION WALI KELAS --- */
+.teacher-section {
+  margin-top: 60px;
+  padding: 40px 5%;
+  display: flex;
+  justify-content: center; /* Supaya card ada di tengah */
+}
+
+.teacher-card {
+  background: linear-gradient(135deg, var(--bg-card), #1e293b);
+  border: 2px solid var(--primary);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+  max-width: 700px; /* Membatasi lebar kotak keseluruhan */
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* --- ADJUST UKURAN GAMBAR GURU --- */
+.teacher-img-box {
+  flex-shrink: 0; /* Mencegah gambar gepeng/tertekan */
+  width: 180px; /* Ukuran lebar kotak foto */
+  height: 180px; /* Ukuran tinggi kotak foto */
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid rgba(56, 189, 248, 0.3);
+}
+
+.teacher-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ini kunci agar foto tidak lonjong/gepeng */
+  object-position: center;
+}
+
+.teacher-info h2 {
+  font-size: 1.5rem;
+  color: var(--text-main);
+  margin: 10px 0;
+}
+
+.teacher-badge {
+  background: var(--primary);
+  color: #000;
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* Responsif untuk HP agar tidak berantakan */
+@media (max-width: 600px) {
+  .teacher-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  .teacher-img-box {
+    width: 150px; /* Sedikit lebih kecil di HP */
+    height: 150px;
+  }
+}
+
+/* --- GALLERY --- */
+.gallery-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.gallery-header h2 {
+  font-size: 2.5rem;
+  color: var(--text-main);
+}
+.gallery-header h2 span {
+  color: var(--primary);
+}
+.gallery-header p {
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--border);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+.gallery-title {
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.gallery-date {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* --- STUDENTS --- */
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.student-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.student-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-5px);
+}
+
+.student-thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 2px solid var(--bg-dark);
+  box-shadow: 0 0 0 2px var(--border);
+}
+
+.student-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+.student-id {
+  font-size: 0.75rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+  margin-top: 50px;
+}
+
+/* --- MODAL --- */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(2, 6, 23, 0.9);
+  backdrop-filter: blur(5px);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.modal-box {
+  background: var(--bg-card);
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  border: 1px solid var(--primary);
+  position: relative;
+  overflow: hidden;
+}
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+.modal-header {
+  background: linear-gradient(var(--bg-card), #020617);
+  padding: 30px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.modal-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+.modal-body {
+  padding: 25px;
+  color: var(--text-muted);
+}
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border);
+}
+.info-item i {
+  width: 30px;
+  color: var(--primary);
+}
+.quote-container {
+  background: rgba(56, 189, 248, 0.05);
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 3px solid var(--primary);
+  font-style: italic;
+  color: var(--text-main);
+  margin-top: 20px;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .headline {
+    font-size: 2.5rem;
+  }
+  .hero-img-box {
+    height: 250px;
+  }
+
+  /* Tampilkan Hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  /* Sembunyikan Nav Links secara default */
+  .nav-links {
+    position: absolute;
+    top: 100%; /* Tepat di bawah navbar */
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-dark);
+    flex-direction: column; /* Jadi vertikal */
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    transform: translateY(-20px); /* Efek slide */
+    opacity: 0;
+    pointer-events: none; /* Tidak bisa diklik saat hidden */
+    transition: all 0.3s ease;
+  }
+
+  /* Saat kelas 'active' ditambahkan lewat JS */
+  .nav-links.mobile-active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-links a {
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    display: block;
+    font-size: 1.1rem;
+  }
+}
+
+.birthday-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.month-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.month-card h3 {
+  color: var(--primary);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.bday-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+
+/* Style Jika Hari Ini Ada yang Ultah */
+.is-today {
+  background: var(--primary-dim);
+  border: 1px solid var(--primary);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+  position: relative;
+  animation: pulseGlow 2s infinite;
+}
+
+.is-today::after {
+  content: "🎂";
+  position: absolute;
+  right: 10px;
+}
+
+.bday-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--primary);
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 5px var(--primary);
+  }
+  50% {
+    box-shadow: 0 0 15px var(--primary);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--primary);
+  }
+}
+
+.gallery-zoom-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.zoom-content-wrapper {
+  text-align: center;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+#imgZoom {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  object-fit: contain;
+}
+
+.zoom-controls {
+  margin-top: 20px;
+}
+
+.btn-download {
+  background: var(--primary);
+  color: #000;
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.btn-download:hover {
+  transform: scale(1.05);
+}
+
+.close-zoom {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  line-height: 1;
+}
