@@ -53,7 +53,7 @@ const students = [
   },
   { id: 6, name: "Ayu Pembayun Tri Jati Wardani", photo: "https://i.vvvar.cc/150?u=6", hobby: "Musik", quote: "Enjoy the rhythm.", ig: "@eko_music" },
   { id: 7, name: "Balqis Alya Aziza Maulana", photo: "foto/individu/balqis.jpeg", hobby: "Membaca", quote: "Assalamualaikum UNER #IZIN #SIKAP", ig: "@balqis.mln", ultah: "03-28", nametag: "Balbalan" },
-  { id: 8, name: "Belva Maulidah Afif Jacinda", photo: "https://i.vvvar.cc/150?u=8", hobby: "Baca Buku dan Dance", quote: "To dream is to live, and to pursue it is keep on Living.", ig: "@bebelvva", ultah: "03-10" },
+  { id: 8, name: "Belva Maulidah Afif Jacinda", photo: "foto/individu/belva.jpeg", hobby: "Baca Buku dan Dance", quote: "To dream is to live, and to pursue it is keep on Living.", ig: "@bebelvva", ultah: "03-10" },
   { id: 9, name: "Cowryand Muazzam Afkarbi", photo: "https://i.vvvar.cc/150?u=9", hobby: "Musik", quote: "Enjoy the rhythm.", ig: "@eko_music" },
   { id: 10, name: "Daffa Aryobimo Nugroho", photo: "https://i.vvvar.cc/150?u=10", hobby: "Musik", quote: "Enjoy the rhythm.", ig: "@eko_music" },
   {
