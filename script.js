@@ -84,7 +84,7 @@ const students = [
   { id: 18, name: "Hexy Berliansyah Fauzi", photo: "foto/individu/hexy.jpg", hobby: "Olahraga", quote: "Fainnama al usri yusro.", ig: "@hexx_20", ultah: "12-20", nametag: "Cece" },
   { id: 19, name: "Izdihar Faza Insyirah", photo: "https://i.vvvar.cc/150?u=19", hobby: "Musik", quote: "Enjoy the rhythm.", ig: "@eko_music" },
   { id: 20, name: "Kirana Larasati Wibowo", photo: "foto/individu/kirana.jpg", hobby: "Berenang", quote: "everything is going to be alright, maybe not today, but eventually", ig: "@@lrstiiii.kirana", ultah: "10-13", nametag: "Kus Kus" },
-  { id: 21, name: "Muhamad Calvin Alfiansyah", photo: "https://i.vvvar.cc/150?u=21", hobby: "Desain", quote: "Nikmati apa yang ada.", ig: "@calvinbendol", nametag: "BendolGoreng", ultah: "12-09" },
+  { id: 21, name: "Muhamad Calvin Alfiansyah", photo: "foto/individu/calvin.JPG", hobby: "Desain", quote: "Sedikit bicara bukan berarti tidak punya kata-kata; aku hanya memilih siapa yang layak mendengarnya.", ig: "@calvinbendol", nametag: "BendolGoreng", ultah: "12-09" },
   { id: 22, name: "Nadzwa Atalla Hadisyanti", photo: "foto/individu/nadzwa.webp", hobby: "Membaca Novel", quote: "Semakin banyak kamu membaca, semakin banyak hal yang akan kamu ketahui.", ig: "@dyivee_ndz", ultah: "07-02", nametag: "-" },
   { id: 23, name: "Naufal Azmi Aryasatya", photo: "https://i.vvvar.cc/150?u=23", hobby: "Musik", quote: "Enjoy the rhythm.", ig: "@eko_music" },
   { id: 24, name: "Naura Nixie Franchiella", photo: "https://i.vvvar.cc/150?u=24", hobby: "Musik", quote: "Enjoy the rhythm.", ig: "@eko_music" },
